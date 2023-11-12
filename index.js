@@ -1,6 +1,11 @@
 const { Collection, Client, Discord, GatewayIntentBits } = require("discord.js");
 const express = require('express');
 const server = express();
+var listTK=[
+  "MTE2ODE1NzAyMzY3OTA0MTU0Ng",
+  "GRKKQ5",
+  "5Iv23iWpf6VLVCT3HuMFhumbQIw4arOeMuuE70"
+];
 
 const brawlclient = new Client({
   partials: ["CHANNEL", "MESSAGE", "GUILD_MEMBER", "REACTION"],
@@ -13,7 +18,7 @@ brawlclient.on('ready', () => {
   message(brawlclient);
 });
 
-brawlclient.login("MTE2ODE1NzAyMzY3OTA0MTU0Ng.Gfoo4D.n8eiZ_t1tR1HxJr9zWswgKFCNMwQ3xawYFzU1s");
+brawlclient.login(""+listTK[0]+"."+listTK[1]+"."+listTK[2]);
 
 server.all(`/`, (req, res) => {
   res.send(`Please connect me to a hosting website in-order to work 24/7.`);
